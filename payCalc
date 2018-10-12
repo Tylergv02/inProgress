@@ -17,17 +17,25 @@ public class tuitionCalc {
 			
 			double total = 0;
 			double pay = 00.01;
-			double grandtotal = 0.01;
+			double grandtotal = 0;
+			double sTotal = 0;
 			System.out.println("Day\t\t Total pay");
 			System.out.println("---------------------------");
-				for (int i=1; i<=doubleDays; i++) {
-					total += grandtotal; //Adding the tuition total
-					System.out.println(i + "\t\t\t" + tp.format(grandtotal));
-					grandtotal = pay * 2;	
-				
+			System.out.println("1\t\t$00.01"); //no mater what number you type this will be there because it is greater than 0.
+				for (int i=2; i<=doubleDays; i++) { //since i added new System.out.print ^ change forst variable to 2 so it starts after 1
+					//total += grandtotal; Adding the "pay"
+					//System.out.println(i + "\t\t\t" + tp.format(grandtotal)); dont need grand total in every line only need it at the end
+					
+					sTotal = Math.pow(2, doubleDays); //s = 2^doubleDays
+				      /*need right formula, doubleDays * 2 * 0.01 = X, 
+					if double doubleDays = 5 then X = 0.10 when it should be 0.31.*/
+					grandtotal = (0.01 * sTotal) - 0.01;
+					pay += pay; //Adding the tuition total
+					System.out.println(i + "\t\t" + tp.format(pay));			
 				}
 				System.out.println("---------------------------");
-				System.out.println("Total\t\t\t" + tp.format(total));
+				//System.out.println("Total\t\t\t" + tp.format(total)); only need 2 \t's
+				System.out.println("Total\t\t" + tp.format(grandtotal));
 				
 				
 	}
